@@ -1,0 +1,525 @@
+
+
+body {
+    overflow: hidden;
+}
+.wrapper {
+    # background-color:red;
+    Position: absolute;
+    top: 0; 
+    left: 0; 
+    bottom: 0; 
+    right: 0;
+    min-width: 965px;
+}
+
+.header {
+    width: 100%;
+    height: 41px;
+    background-color:#00334d;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.leftUp{
+    width: 88px;
+    height: 51px;
+    float: left;
+    margin: -4px 15px 0px 25px;
+
+    background-image: url(<%= asset_path'spectory_logo.png' %>);
+    
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rightUp{
+    width: 92px;
+    height: 27px;
+    float: right;
+    margin: 7px 18px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border: 1px solid white;
+}
+
+.rightUpL{
+    color: white;
+    font-size: 10px;
+    width: 67px;
+    height: 20px;
+    margin: 0px 0px -2px 5px;
+}
+
+.rightUpR{
+    width: 12px;
+    height: 23px;
+    color :white;
+}
+
+.backG {
+    width: 100%;
+    height: 615px;
+    background-image: url(<%= asset_path'bg_small.jpg' %>);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.grandPractice {
+    width: 100%;
+    height: 153px;
+    display: flex;
+    justify-content: center;
+}
+
+.headPic {
+    width: 220px;
+    height: 198px;
+    background-image: url(<%= asset_path'Bootcamp_logo.png' %>);
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+}
+      
+.carousel {
+    width: 100%;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselBox {
+    width: 80%;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    # opacity: 0.5;
+}
+.carouselCenter{
+    width: 90%;
+    height: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -15px -0px 0px 0px;
+}
+
+@media screen and (max-width: 1190px) and (min-width: 960px) {
+
+.carouselBox {
+    width: 960px ;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.carouselCenter{
+    width: 90%;
+    height: 99px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: -15px -0px 0px 0px;
+}
+}
+
+@media screen and (orientation:portrait) {
+
+.carouselBox {
+    width: 960px;
+    height: 152px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.carouselCenter{
+    width: 90%;
+    height: 99px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: -15px -0px 0px 0px;
+}
+}
+
+.carouselR{
+    width: 15px;
+    height: 99px;
+    background-image: url(<%= asset_path'forward_forward.png' %>);
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin: -30px 9px 0px 0px;
+}
+
+.carouselL{
+    width: 15px;
+    height: 99px;
+    background-image: url(<%= asset_path'arrow_back.png' %>);
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+    margin: -30px 0px 0px 9px;
+}
+
+.imgEmployee{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgEmployeeBold{
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.nameLength{
+    margin: 7px 0px 0px 0px;
+
+}
+.myImg {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    filter: grayscale(100%);
+}
+
+.myImgRed {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.borderNormal {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-style: solid;
+    border-color:#6699cc;
+    justify-content: center;
+}
+
+.borderRed {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-style: solid;
+    border-color: #ff3333;
+    justify-content: center;
+}
+
+.selectedImg {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-color: #6699cc;
+}
+
+.employee {
+    width: 100%;
+    height: 212px;
+    display: flex;
+    align-items: center;
+    flex-direction :column;
+}
+.employeeName {
+    width: 256px;
+    height: 54px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #00334d;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.employeeBox {
+    width: 755px;
+    height: 225px;
+    margin: 10px 189px -30px 105px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.employeeLeft {
+    width: 415px;
+    height: 180px;
+    margin: -37px -22px -34px 67px;
+    border-left-style: solid;
+    border-left-color:red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #e6faff;
+
+}
+
+.employeeCard {
+    width: 58%;
+    height: 88%;
+    font-size: 21px;
+    margin: 1px 0px 0px 0px;
+}
+
+.employeeTable {
+    width: 100%;
+    height: 78%;
+    font-size: 10px;
+    margin: 0px 0px 0px -15px;
+}
+
+.employeeRight {
+    width: 158px;
+    height: 172px;
+    margin: -32px 25px -36px 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction :column;
+}
+
+.employeeRU {
+    width: 238px;
+    height: 110px;
+    margin: -2px -22px -34px -31px;
+    border-left-style: solid;
+    border-left-color:#00334d;
+    background-color: #e6faff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contactInfo {
+    width: 86%;
+    height: 84%;
+    font-size: 20px;
+    margin: 0px 0px 0px 23px;
+}
+
+.employeeInfo {
+    width: 124%;
+    height: 63%;
+    font-size: 10px;
+}
+
+.employeeRD {
+    width: 240px;
+    height: 55px;
+    margin: 2px 61px -4px 56px;
+    border-left-style: solid;
+    border-left-color:green;
+    background-color: #e6faff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.activeDotRed{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    margin: 0px -29px 0px 0px;
+}
+
+.activeDotGreen{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    margin: 0px -29px 0px 0px;
+}
+
+.activeEmployee {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: -5px 26px 0px 0px;
+}
+
+.statistics {
+    width: 100%;
+    height: 282px;
+    background-color: #e6faff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.statisticsBox {
+    width: 804px;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statisticsLeft {
+    width: 327px;
+    height: 178px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 2px;
+    background-color: #e6f3ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction :column;
+    margin: -2px 8px 0px 10px;
+}
+
+.headS{
+    width: 100%;
+    height: 20%;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerS{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction :row;
+}
+
+.HRLeft{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction :column;
+}
+
+.numLeft{
+    width: 100%;
+    height: 72%;
+    font-size: 57px;
+    display: flex;
+    justify-content: center;
+    margin: -9px 0px 0px 0px;
+}
+.line{
+    width: 24%;
+    height: 10px;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+    justify-content: center;
+}
+
+
+.textLeft{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HRRight {
+    width: 46%;
+    height: 70%;
+    border-left-style: solid;
+    border-left-color: red;
+}
+
+.Rbox{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction :column;
+}
+
+.num{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.bold{
+    font-weight: bold;
+}
+.text{
+    width: 100%;
+    height: 20%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statisticsRight {
+    width: 327px;
+    height: 178px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-width: 2px;
+    background-color: #e6f3ff;
+    margin: 1px 10px 1px 8px;
+}
+
+.footer {
+    width: 100%;
+    height: 28px;
+    background-color:#00334d;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+} 
+
+.leftDown{
+    width: 81px;
+    height: 36px;
+    float:left;
+    margin: 0px 15px 0px 25px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.leftDownL{
+    color: white;
+    font-size: 8px;
+    height: 33px;
+    margin: 0px 0px -6px 0px;
+}
+
+.leftDownR{
+    width: 17px;
+    height: 35px;
+    margin: 0px 4px -2px 3px;
+    background-image: url(<%= asset_path'spectory_faviconi.png' %>);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.rightDown{
+    float: right;
+    margin: 7px 16px 0px 0px;
+    color: white;
+    font-size: 9px;
+}
+

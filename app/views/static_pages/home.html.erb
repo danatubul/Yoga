@@ -1,0 +1,155 @@
+<div ng-controller="employees">
+<div class="wrapper">
+
+    <div class="header">
+        <div class="leftUp"></div>
+        <div class="rightUp">
+          <div class= "rightUpL">BACK OFFICE</div>
+          <div class= "rightUpR"> &#8250;</div>
+        </div>
+    </div>
+
+    <div class ="backG">
+      <div class="grandPractice">
+        <div class="headPic"></div>
+      </div>
+
+      <div class="carousel">
+        
+        <div class="carouselBox">
+
+          <div class="carouselL" ng-click="changeIndexL()"></div>
+          <div class="carouselCenter">
+                <div ng-repeat="employeeI in employeesList track by $index" ng-if="showEmployees($index)" ng-click="selectedEmployee($index)" >
+                
+                  <div class="imgEmployee"  ng-class="changeColor($index) ? 'imgEmployeeBold': 'imgEmployee'">
+
+                    <div class= "borderNormal" ng-class="changeColor($index) ? 'borderRed': 'borderNormal'">
+                      <img class="myImgRed" ng-class="changeColor($index) ? 'myImgRed': 'myImg'" src="{{employeesList[$index].first_name +'_'+  employeesList[$index].last_name}}.png" alt="employee"/>
+                    </div>
+                    <div class="nameLength" ng-if="employeeNameLength($index)">
+                      {{employeesList[$index].first_name +' '+  employeesList[$index].last_name}}
+                    </div>
+                    <div class="nameLength" ng-if="!employeeNameLength($index)">
+                      {{employeesList[$index].first_name | limitTo:1 +'.'}}
+                      {{employeesList[$index].last_name | limitTo:1}}
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+          </div>
+         
+          <div class="carouselR" ng-click="changeIndexR()"></div>
+          
+        </div>
+      </div>
+
+      <div class="employee">
+        <div class="employeeName">{{employeesList[indexSelected].first_name +' '+  employeesList[indexSelected].last_name}}</div>
+        <div class="employeeBox">
+          <div class="employeeLeft">
+              <img class="selectedImg" src="{{employeesList[indexSelected].first_name +'_'+  employeesList[indexSelected].last_name}}.png" alt="employee"/>
+              <div class="employeeCard">Employee Card
+                   <table class="employeeTable" >
+                    <tr>
+                      <td>POSITION</td>
+                      <td>{{employeesList[indexSelected].position}}</td>
+                    </tr>
+                    <tr>
+                      <td>OFFICE</td>
+                      <td>{{employeesList[indexSelected].office_name}}</td>
+                      
+                    </tr>
+                    <tr>
+                      <td>SINCE</td>
+                      <td>{{employeesList[indexSelected].start_date}}</td>
+                    </tr>
+                    <tr>
+                      <td>RESIDENCE</td>
+                      <td>{{employeesList[indexSelected].residence}}</td>
+                    
+                    </tr>
+                    <tr>
+                      <td ng-if="showEmployeeDietary(indexSelected)">DIEATRY RESTICTIONS</td>
+                      <td>{{employeedietariesList}}</td>
+                    
+                    </tr>
+                  </table>
+             </div>
+          </div>
+          <div class="employeeRight">
+            <div class="employeeRU">
+              <div class="contactInfo">Contact info
+                <table class="employeeInfo">
+                      <tr>
+                        <td>PHONE</td>
+                        <td>{{employeesList[indexSelected].phone}}</td>
+                      </tr>
+                      <tr>
+                        <td>EMAIL</td>
+                        <td>{{employeesList[indexSelected].email}}</td>
+                      </tr>
+                </table>
+              </div>
+            </div>
+            <div class="employeeRD">
+              <div class="activeDotGreen" ng-class="activEmployee(indexSelected) ? 'activeDotGreen': 'activeDotRed'"></div>
+              <div class="activeEmployee"> {{employeesList[indexSelected].status +' '+ 'employee' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="statistics">
+      <div class="statisticsBox">
+        <div class="statisticsLeft">
+          <div class= "headS">HR Statistics</div>
+          <div class ="centerS">
+
+            <div class ="HRLeft">
+              <div class="numLeft">
+                <div class="bold"> <%= Employee.where(status: 'active').count %> </div>
+                   / <%= Employee.count %>
+              </div>
+              <div class="line"></div>
+              <div class="textLeft">Active employees</div>
+            </div>
+            
+            <div class ="HRRight">
+              <div class ="Rbox">
+                <div class="num">
+                  <div class="bold"> <%= Office.where(office_name: "HQ")[0].employees.where(status: 'active').count %> </div>
+                  / <%= Office.where(office_name: "HQ")[0].employees.count %>
+                </div>
+                <div class="text">Spectory HQ</div>
+              </div> 
+
+              <div class ="Rbox">
+                <div class="num">
+                  <div class="bold"> <%= Office.where(office_name: "Google")[0].employees.where(status: 'active').count %> </div>
+                   / <%= Office.where(office_name: "Google")[0].employees.count %>
+                </div>
+                <div class="text">Spectory Google</div>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="statisticsRight"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <div class="leftDown">
+          <div class= "leftDownL">Developed by</div>
+          <div class= "leftDownR"></div>
+        </div>
+        <div class="rightDown">@ GrandPractice 2017</div>
+      </div>
+
+</div>    
+</div>

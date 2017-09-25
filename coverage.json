@@ -1,0 +1,14 @@
+{
+  "server": {
+    "coverage": 28.8,
+    "number_of_tests": 21,
+    "failures": 0, 
+    "skipped": 0
+  },
+  "client": {
+    "coverage": 50.7,
+    "number_of_tests": 7,
+    "failures": 0, 
+    "skipped": 0
+  }
+}
