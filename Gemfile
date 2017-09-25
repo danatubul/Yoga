@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.0'
+ruby '2.4.2'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'rails', '>= 5.1.2'
 gem 'puma'
